@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.hpp                                     :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miwasa <miwasa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/11 21:01:18 by miwasa            #+#    #+#             */
-/*   Updated: 2025/03/11 21:14:33 by miwasa           ###   ########.fr       */
+/*   Created: 2025/03/11 21:16:40 by miwasa            #+#    #+#             */
+/*   Updated: 2025/03/11 21:16:53 by miwasa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Identify.hpp"
+#include <iostream>
 
-#include <stdint.h>
-#include "Data.hpp"
+int main() {
+	Base* p = generate();
 
-class Serializer {
-private:
-	Serializer();
-	Serializer(const Serializer&);
-	Serializer& operator=(const Serializer&);
-public:
-	static uintptr_t serialize(Data* ptr);
-	static Data* deserialize(uintptr_t raw);
-};
+	std::cout << "Identifying via pointer: ";
+	identify(p);
+
+	std::cout << "Identifying via reference: ";
+	identify(*p);
+
+	delete p;
+	return 0;
+}

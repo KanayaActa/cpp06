@@ -6,7 +6,7 @@
 #    By: miwasa <miwasa@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/09 12:47:58 by miwasa            #+#    #+#              #
-#    Updated: 2025/03/11 14:43:40 by miwasa           ###   ########.fr        #
+#    Updated: 2025/03/11 16:36:21 by miwasa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ CXX			:= c++
 CXXFLAGS	:= -Wall -Wextra -Werror
 CXXFLAGS	+= -std=c++98
 
-SRCS		:= main.cpp
+SRCS		:= main.cpp \
+				ScalarConverter.cpp
 
 OBJS_DIR	:= obj
 OBJS		:= $(addprefix $(OBJS_DIR)/, $(SRCS:.cpp=.o))
